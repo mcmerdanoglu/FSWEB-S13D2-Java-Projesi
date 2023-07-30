@@ -30,7 +30,7 @@ public class Main {
         else {
             String strNumber = Integer.toString(number);
 
-            //char[] digits = strNumber.toCharArray();
+            //char[] digits = strNumber.toCharArray(); chara convert ile de yapılabilir
 
             StringBuilder sb = new StringBuilder(strNumber);
             String strReversed = sb.reverse().toString();
