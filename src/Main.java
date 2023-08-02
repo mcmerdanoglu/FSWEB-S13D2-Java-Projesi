@@ -11,10 +11,16 @@ public class Main {
         System.out.println(isPalindrome(11212));
 
         System.out.println("isPerfectNumber------------------");
-        System.out.println( isPerfectNUmber(6));
-        System.out.println( isPerfectNUmber(28));
-        System.out.println( isPerfectNUmber(5));
-        System.out.println( isPerfectNUmber(-1));
+        System.out.println(isPerfectNUmber(6));
+        System.out.println(isPerfectNUmber(28));
+        System.out.println(isPerfectNUmber(5));
+        System.out.println(isPerfectNUmber(-1));
+
+        System.out.println("numberToWords------------------");
+        System.out.println(numberToWords(12345));
+        System.out.println(numberToWords(123));
+        System.out.println(numberToWords(1010));
+        System.out.println(numberToWords(-12));
     }
 
     public static boolean isPalindrome(int number) {
@@ -59,4 +65,25 @@ public class Main {
         }
         return total == number;
     }
+
+    public static String numberToWords(int value) {
+        if (value < 0) System.out.println("Invalid Value");
+
+        String strNumber = Integer.toString(value);
+
+        char[] digits = strNumber.toCharArray();
+        //System.out.println("Test: " + String.valueOf(digits));
+
+        String result = "";
+        for (char digit : digits) {
+            int numeric = Character.getNumericValue(digit);
+            //System.out.println("numericNo: " + numeric);
+
+            result = result + " " + NumEquals.getWordFromIndex(numeric);
+            //result += NumEquals.getWordFromIndex(numeric); Bu şekilde de yeni atama üzerine yazabilir
+        }
+        return result;
+    }
+
+
 }
